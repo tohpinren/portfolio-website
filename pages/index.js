@@ -34,9 +34,13 @@ export default function Home() {
             </p>
           </div>
 
-          <div className='text-5xl flex justify-center gap-16 py-3 text-gray-600'>
-            <AiFillGithub />
-            <AiFillLinkedin />
+          <div className='text-5xl flex justify-center gap-16 py-3 text-gray-600 cursor-pointer'>
+            <a href="https://github.com/tohpinren" target="_blank" rel="noopener noreferrer">
+              <AiFillGithub />
+            </a>
+            <a href="https://www.linkedin.com/in/tohpinren/" target="_blank" rel="noopener noreferrer">
+              <AiFillLinkedin />
+            </a>
           </div>
         </section>
 
