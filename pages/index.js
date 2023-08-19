@@ -7,6 +7,7 @@ import me from 'public/me.jpg'
 import { useState, useEffect } from 'react'
 import NavBar from 'components/NavBar'
 import Footer from 'components/Footer'
+import Layout from 'app/Layout'
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
