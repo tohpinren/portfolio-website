@@ -8,7 +8,7 @@ export const metadata = {
   description: 'Pin Ren\'s portfolio',
 }
 
-export default function RootLayout({ children }) {
+export default function Layout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
