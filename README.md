@@ -1,3 +1,10 @@
-Portfolio website built by Pin Ren
+# Portfolio website
 
-Built using NextJS, React and Tailwind CSS, deployed using Heroku
+Personal portfolio website featuring my experiences, education and projects.
+
+## Built with
+- NextJS
+- React
+- Tailwind CSS
+- Deployed using Vercel
+- Domain on Porkbun
