@@ -1,6 +1,6 @@
 # Portfolio website
 
-Personal portfolio website featuring my experiences, education and projects.
+Personal portfolio [website](https://www.tohpinren.com/) featuring my experiences, education and projects.
 
 I built this website to showcase my work, practice frontend skills and learn deployment to a registered domain.
 
