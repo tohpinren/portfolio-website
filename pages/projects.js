@@ -10,6 +10,7 @@ import sps from 'public/sps.png'
 import bbdc from 'public/bbdc.png'
 import battlecode from 'public/battlecode.jpeg'
 import party from 'public/party.png'
+import orderbook from 'public/orderbook.png'
 
 const Project = ({title, summary, img, link, github, date, tech}) => {
   return (
@@ -74,6 +75,15 @@ const Projects = () => {
             </div>
 
             <div className='flex flex-col items-center justify-evenly gap-20 pb-32'>
+              <Project
+                title='Fast Limit Order Book'
+                date='Sep 2023'
+                summary='Implemented an efficient limit order book for high-frequency trading that supports mostly O(1) operations.'
+                tech='C++, Doctest'
+                img={orderbook}
+                github='https://github.com/tohpinren/order-book'
+                link='https://github.com/tohpinren/order-book'
+              />
               <Project
                 title='Party When? Web App'
                 date='Mar 2023'

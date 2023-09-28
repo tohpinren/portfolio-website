@@ -58,7 +58,7 @@ const Experience = () => {
                 ['Developed a clinical management tool, improving speed of clinical data entry by 2-3 times',
                 'Engineered an app for healthcare professionals to upload clinical data and query database using dropdown boxes or natural language with the use of HuggingFace AI for natural language to SQL query conversion',
                 'Architectured backend business logic for E-Vaccination application, empowering doctors to effortlessly evaluate eligibility and provide personalised vaccinations recommendations for optimal patient care',
-                'Built an app to for two way batch messaging using Twilio to allow clinics to send reminders, schedule appointments and follow up on patients seamlessly'
+                'Built an app for two way batch messaging using Twilio to allow clinics to send reminders, schedule appointments and follow up on patients seamlessly'
                 ]}
                 />
                 <Details 
