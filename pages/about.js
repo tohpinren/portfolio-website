@@ -35,12 +35,12 @@ const About = () => {
             <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
             <div className='flex flex-col justify-center items-center'>
                 <h1 className='text-bold text-2xl sm:text-3xl'>Nice to meet you!</h1>
-                <h3 className='text-base sm:text-xl w-[70%] sm:w-[50%] '>
+                <h3 className='text-base sm:text-xl w-[70%] sm:w-[50%]'>
                   I&apos;m Pin Ren. I&apos;m a 2nd Year Computer Science undergraduate at the National University of Singapore.
                   I am currently looking for a Software Engineering Internship for 2024.
                 </h3>
                 <br />
-                <h3 className='text-base sm:text-xl w-[70%] sm:w-[50%] '>
+                <h3 className='text-base sm:text-xl w-[70%] sm:w-[50%]'>
                   Languages: Python, Java, JavaScript, C++, C#, HTML, CSS, SQL
                   <br />
                   Tools: Node, React, Express, MongoDB, PostgreSQL, Tailwind CSS, NextJS, Postman, Jira, Linear, Git

@@ -45,8 +45,8 @@ export default function Home() {
             <h3 className='text-black text-2xl py-2 md:text-3xl dark:text-white'>
               NUS Y2 CS
             </h3>
-            <p className='text-black text-md py-2 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white'>
-              Interested in building products to solve real-world problems.
+            <p className='text-black text-md py-2 leading-8 md:text-xl max-w-xl mx-auto dark:text-white'>
+              Passionate about solving real-world problems using technology
             </p>
           </div>
 

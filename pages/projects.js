@@ -71,14 +71,14 @@ const Projects = () => {
         <main className='bg-white text-black dark:bg-black dark:text-white'>
             <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
             <div className='flex flex-col items-center'>
-                <h1 className='text-bold text-xl sm:text-3xl mb-8'>Hi! Here are some of my projects.</h1>
+                <h1 className='text-bold text-xl sm:text-3xl mb-8'>Hi! Here are some of my projects</h1>
             </div>
 
             <div className='flex flex-col items-center justify-evenly gap-20 pb-32'>
               <Project
                 title='Fast Limit Order Book'
                 date='Sep 2023'
-                summary='Implemented an efficient limit order book for high-frequency trading that supports mostly O(1) operations.'
+                summary='Implemented an efficient limit order book for high-frequency trading that supports mostly O(1) operations'
                 tech='C++, Doctest'
                 img={orderbook}
                 github='https://github.com/tohpinren/order-book'
@@ -87,7 +87,7 @@ const Projects = () => {
               <Project
                 title='Party When? Web App'
                 date='Mar 2023'
-                summary='A web app that allows users to plan and join parties hosted by other users.'
+                summary='A web app that allows users to plan and join parties hosted by other users'
                 tech='React, Node.js, Express.js, MongoDB, HTML, CSS'
                 img={party}
                 github='https://github.com/tohpinren/party-app'
@@ -97,7 +97,7 @@ const Projects = () => {
                   title='MIT BattleCode 2023'
                   date='Jan 2023'
                   summary='Competed in a RTS AI multiplayer programming competition, developing a player controller capable of strategising
-                  and playing against other teams.'
+                  and playing against other teams'
                   tech='Java'
                   img={battlecode}
                   github='https://github.com/tohpinren/Mixue-Rats'
@@ -115,7 +115,7 @@ const Projects = () => {
               <Project
                 title='BBDC Simulator Slot Booking Bot'
                 date='Oct 2021'
-                summary='An automated script that books driving simulator lessons at Bukit Batok Driving Centre, a driving school in Singapore.'
+                summary='An automated script that books driving simulator lessons at Bukit Batok Driving Centre, a driving school in Singapore'
                 tech='Python, Selenium'
                 img={bbdc}
                 github='https://github.com/tohpinren/BBDCBot'
