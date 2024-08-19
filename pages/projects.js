@@ -11,6 +11,7 @@ import bbdc from 'public/bbdc.png'
 import battlecode from 'public/battlecode.jpeg'
 import party from 'public/party.png'
 import orderbook from 'public/orderbook.png'
+import googleaihackathon from 'public/googleaihackathon.png'
 
 const Project = ({title, summary, img, link, github, date, tech}) => {
   return (
@@ -75,6 +76,15 @@ const Projects = () => {
             </div>
 
             <div className='flex flex-col items-center justify-evenly gap-20 pb-32'>
+              <Project
+                title='Google AI Hackathon 2024'
+                date='May 2024'
+                summary='CrimeWatch.AI is a project aimed at leveraging artificial intelligence to detect and prevent crime. This project utilizes Gemini 1.5 Pro API to analyze various data sources and provide insights to law enforcement agencies and communities.'
+                tech='Python, Gemini, Azure, React, Typescript'
+                img={googleaihackathon}
+                github='https://github.com/Y-ZR/CrimeWatch.AI'
+                link='https://googleai.devpost.com/'
+              />
               <Project
                 title='Fast Limit Order Book'
                 date='Sep 2023'

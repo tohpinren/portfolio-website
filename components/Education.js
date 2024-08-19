@@ -53,7 +53,7 @@ const Education = () => {
                 info={[
                 'Grade: First Class Honours',
                 'NOC Southeast Asia Bangkok',
-                'CS1101S Programming Methodology I Teaching Assistant'
+                'NOC Silicon Valley'
                 ]}
                 />
                 <Details 

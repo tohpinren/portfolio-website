@@ -36,15 +36,18 @@ const About = () => {
             <div className='flex flex-col justify-center items-center'>
                 <h1 className='text-bold text-2xl sm:text-3xl'>Nice to meet you!</h1>
                 <h3 className='text-base sm:text-xl w-[70%] sm:w-[50%]'>
-                  I&apos;m Pin Ren. I&apos;m a 2nd Year Computer Science undergraduate at the National University of Singapore.
-                  I am currently looking for a Software Engineering Internship for 2024.
+                  I&apos;m Pin Ren. I&apos;m a 3rd Year Computer Science Undergraduate at the National University of Singapore (NUS) specialising in Networking & Distributed Systems and Artificial Intelligence.
+                  I'm deeply passionate about building highly efficient systems that can scale gracefully to tackle real-world problems.
                 </h3>
                 <br />
                 <h3 className='text-base sm:text-xl w-[70%] sm:w-[50%]'>
-                  Languages: Python, Java, JavaScript, C++, C#, HTML, CSS, SQL
-                  <br />
-                  Tools: Node, React, Express, MongoDB, PostgreSQL, Tailwind CSS, NextJS, Postman, Jira, Linear, Git
+                  Currently, I am a Software Engineering Intern at Kipo AI, under the NUS Overseas College Silicon Valley program.
                 </h3>
+                <br />
+                <h3 className='text-base sm:text-xl w-[70%] sm:w-[50%]'>
+                  I am currently looking for a Software Engineering Internship for 2025 Summer.
+                </h3>
+                <br />
                 <div className='text-3xl sm:text-5xl flex justify-center gap-16 py-3 text-gray-600 cursor-pointer'>
                     <a href="https://www.linkedin.com/in/tohpinren/" target="_blank" rel="noopener noreferrer">
                         <AiFillLinkedin className='hover:text-blue-600' />
