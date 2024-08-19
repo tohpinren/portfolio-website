@@ -37,7 +37,7 @@ const About = () => {
                 <h1 className='text-bold text-2xl sm:text-3xl'>Nice to meet you!</h1>
                 <h3 className='text-base sm:text-xl w-[70%] sm:w-[50%]'>
                   I&apos;m Pin Ren. I&apos;m a 3rd Year Computer Science Undergraduate at the National University of Singapore (NUS) specialising in Networking & Distributed Systems and Artificial Intelligence.
-                  I'm deeply passionate about building highly efficient systems that can scale gracefully to tackle real-world problems.
+                  I&apos;m deeply passionate about building highly efficient systems that can scale gracefully to tackle real-world problems.
                 </h3>
                 <br />
                 <h3 className='text-base sm:text-xl w-[70%] sm:w-[50%]'>
