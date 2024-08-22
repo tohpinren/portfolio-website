@@ -95,41 +95,14 @@ const Projects = () => {
                 link='https://github.com/tohpinren/order-book'
               />
               <Project
-                title='Party When? Web App'
-                date='Mar 2023'
-                summary='A web app that allows users to plan and join parties hosted by other users'
-                tech='React, Node.js, Express.js, MongoDB, HTML, CSS'
-                img={party}
-                github='https://github.com/tohpinren/party-app'
-                link='https://github.com/tohpinren/party-app'
-              />
-                <Project
-                  title='MIT BattleCode 2023'
-                  date='Jan 2023'
-                  summary='Competed in a RTS AI multiplayer programming competition, developing a player controller capable of strategising
-                  and playing against other teams'
-                  tech='Java'
-                  img={battlecode}
-                  github='https://github.com/tohpinren/Mixue-Rats'
-                  link='https://battlecode.org/'
-                />
-              <Project
-                title='Scissors Paper Stone Game'
-                date='Dec 2022'
-                summary='A website for playing Scissors, Paper, Stone against a computer'
-                tech='JavaScript, HTML, CSS'
-                img={sps}
-                github='https://github.com/tohpinren/scissors-paper-stone'
-                link='https://tohpinren.github.io/scissors-paper-stone/'
-              />
-              <Project
-                title='BBDC Simulator Slot Booking Bot'
-                date='Oct 2021'
-                summary='An automated script that books driving simulator lessons at Bukit Batok Driving Centre, a driving school in Singapore'
-                tech='Python, Selenium'
-                img={bbdc}
-                github='https://github.com/tohpinren/BBDCBot'
-                link='https://github.com/tohpinren/BBDCBot'
+                title='MIT BattleCode 2023'
+                date='Jan 2023'
+                summary='Competed in a RTS AI multiplayer programming competition, developing a player controller capable of strategising
+                and playing against other teams'
+                tech='Java'
+                img={battlecode}
+                github='https://github.com/tohpinren/Mixue-Rats'
+                link='https://battlecode.org/'
               />
             </div>
         </main>
