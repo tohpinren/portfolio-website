@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import { Inter } from 'next/font/google';
 import '../globals.css';
 
@@ -7,6 +8,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <div className={inter.className}>
       <Component {...pageProps} />
+      <Analytics />
     </div>
   );
 }
