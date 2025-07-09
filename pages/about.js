@@ -31,16 +31,16 @@ const About = () => {
            </h1>
            <div className="space-y-4 text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed text-center md:text-left mobile-margin">
              <p>
-               I'm Pin Ren, a Year 4 Computer Science student at the National University of Singapore (NUS), specializing in Artificial Intelligence.
+               I&apos;m Pin Ren, a Year 4 Computer Science student at the National University of Singapore (NUS), specializing in Artificial Intelligence.
              </p>
              <p>
-               I'm passionate about building practical AI systems and distributed infrastructure. I'm currently working on my Final Year Project exploring LLMs and databases, developing techniques to automatically generate SQL benchmarks.
+               I&apos;m passionate about building practical AI systems and distributed infrastructure. I&apos;m currently working on my Final Year Project exploring LLMs and databases, developing techniques to automatically generate SQL benchmarks.
              </p>
              <p>
-               I'm actively seeking full-time Software Engineering roles starting Summer 2026.
+               I&apos;m actively seeking full-time Software Engineering roles starting Summer 2026.
              </p>
              <p>
-               When I'm not coding, I enjoy reading, cooking, and exploring new restaurants! I stay active through running and hiking, and love films and travel.
+               When I&apos;m not coding, I enjoy reading, cooking, and exploring new restaurants! I stay active through running and hiking, and love films and travel.
              </p>
            </div>
            <motion.div
