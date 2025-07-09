@@ -1,70 +1,70 @@
 "use client";
 
-import Head from 'next/head'
-import { AiFillLinkedin, AiFillGithub, AiFillMail } from 'react-icons/ai'
-import Image from 'next/image'
-import me from 'public/me.jpg'
-import { useState, useEffect } from 'react'
-import NavBar from 'components/NavBar'
-import Footer from 'components/Footer'
-import Layout from './Layout'
+import { motion } from 'framer-motion';
+import Head from 'next/head';
+import Image from 'next/image';
+import PageLayout from '../components/PageLayout';
+import SocialLinks from '../components/SocialLinks';
+import me from '../public/me.jpg';
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    // Check if dark mode preference is stored in local storage
-    const storedDarkMode = localStorage.getItem('darkMode');
-    if (storedDarkMode) {
-      setDarkMode(storedDarkMode === 'true');
-    }
-  }, []);
-
-  useEffect(() => {
-    // Update local storage when dark mode state changes
-    localStorage.setItem('darkMode', darkMode);
-  }, [darkMode]);
-
-
   return (
-    <div className={darkMode ? 'dark' : ''}>
+    <PageLayout title="Pin Ren Toh - Home">
       <Head>
-        <title>Toh Pin Ren Portfolio</title>
-        <meta name='description' content='developed by Pin Ren'/>
-        <link rel='icon' href='/favicon.ico' />
+        <title>Pin Ren Toh - Home</title>
+        <meta name="description" content="Welcome to my portfolio" />
       </Head>
 
-      <main className='bg-white text-black dark:bg-black'>
-        <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
-        <section className='min-h-screen'>
-          <div className='text-center'>
-            <Image alt='Picture of me' className='mx-auto center w-96 h-96 md:h-120 md:w-120' src={me} />
-            <h2 className='text-teal-600 text-5xl font-md py-2 md:text-6xl dark:text-teal-500'>
-              Toh Pin Ren
-            </h2>
-            <h3 className='text-black text-2xl py-2 md:text-3xl dark:text-white'>
-              NUS Y3 CS
-            </h3>
-            <p className='text-black text-md py-2 leading-8 md:text-xl max-w-xl mx-auto dark:text-white'>
-              Passionate about solving real-world problems using software
-            </p>
-          </div>
+      <div className="container-mobile flex flex-col items-center justify-start min-h-screen pt-4 sm:pt-6 md:pt-8 pb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-4xl mx-auto w-full"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto mb-6 sm:mb-8 group"
+          >
+            <Image
+              alt="Pin Ren Toh"
+              src={me}
+              fill
+              className="rounded-lg object-cover shadow-2xl ring-2 ring-blue-500/20 dark:ring-blue-400/30 group-hover:ring-blue-500/40 dark:group-hover:ring-blue-400/50 transition-all duration-300"
+              priority
+            />
+          </motion.div>
 
-          <div className='text-5xl flex justify-center gap-16 py-2 text-gray-600 cursor-pointer'>
-            <a href="https://www.linkedin.com/in/tohpinren/" target="_blank" rel="noopener noreferrer">
-              <AiFillLinkedin className='hover:text-blue-600' />
-            </a>
-            <a href="https://github.com/tohpinren" target="_blank" rel="noopener noreferrer">
-              <AiFillGithub className='hover:text-gray-400' />
-            </a>
-            <a href="mailto:tohpinren@gmail.com" target="_blank" rel="noopener noreferrer">
-              <AiFillMail className='hover:text-red-500'/>
-            </a>
-          </div>
-        </section>
-        
-      </main>
-      <Footer />
-    </div>
-  )
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 mobile-margin"
+          >
+            Pin Ren Toh
+          </motion.h1>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-blue-600 dark:text-blue-400 mb-6 sm:mb-8 tracking-wide mobile-margin"
+          >
+            Y4 Computer Science @ NUS (AI + Systems)
+          </motion.h2>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mobile-margin"
+          >
+            <SocialLinks className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl flex justify-center gap-6 sm:gap-8 md:gap-10 py-2 text-gray-600 dark:text-gray-400" />
+          </motion.div>
+        </motion.div>
+      </div>
+    </PageLayout>
+  );
 }

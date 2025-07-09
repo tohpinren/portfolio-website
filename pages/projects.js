@@ -1,114 +1,132 @@
-import React from 'react'
-import NavBar from 'components/NavBar'
-import Footer from 'components/Footer'
-import { useState, useEffect } from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
-import { AiFillGithub } from 'react-icons/ai'
-import sps from 'public/sps.png'
-import bbdc from 'public/bbdc.png'
-import battlecode from 'public/battlecode.jpeg'
-import party from 'public/party.png'
-import orderbook from 'public/orderbook.png'
-import googleaihackathon from 'public/googleaihackathon.png'
+import { motion } from 'framer-motion';
+import Head from 'next/head';
+import Image from 'next/image';
+import PageLayout from '../components/PageLayout';
 
-const Project = ({title, summary, img, link, github, date, tech}) => {
+const ProjectCard = ({ title, description, image, technologies, link, github }) => {
   return (
-    <article className='w-[70%] flex item-center justify-between
-    rounded-3xl border border-solid border-black bg-white shadow-2xl p-12'>
-
-      <Link href={link} target="_blank" rel="noopener noreferrer"
-      className='w-1/2 cursor-pointer overflow-hidden rounded-lg'>
-        <Image src={img} alt={title} className='w-full h-auto' />
-      </Link>
-
-      <div className='w-1/2 flex flex-col items-start justify-between pl-6'>
-        <Link href={link} target="_blank" rel="noopener noreferrer" className='hover:underline underline-offset-2 dark:text-black'>
-          <h2 className='my-2 w-full text-left text-xl sm:text-4xl font-bold'>{title}</h2>
-        </Link>
-        <p className='my-2 text-xs sm:text-base font-medium text-black'>{date}</p>
-        <p className='my-2 text-xs sm:text-base font-medium text-black'>{summary}</p>
-        <p className='my-2 text-xs sm:text-base font-medium text-black'>Tech Stack: {tech}</p>
-        <div className='mt-2 flex items-center'>
-          <Link href={github} target="_blank" rel="noopener noreferrer"
-          className='w-20 text-4xl sm:text-6xl dark:text-black'>
-            <AiFillGithub className='hover:text-gray-400 '/>
-          </Link>
-          <Link href={link} target="_blank" rel="noopener noreferrer"
-          className='sm:ml-4 rounded-lg bg-black text-white p-1 sm:p-2 px-2 sm:px-6 text-xs sm:text-lg font-semibold hover:bg-gray-400'>
-            Visit Project
-          </Link>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200 dark:border-gray-800"
+    >
+      <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="p-4 sm:p-6">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+          {title}
+        </h3>
+        <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+          {description}
+        </p>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {technologies.map((tech, index) => (
+            <span
+              key={index}
+              className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs sm:text-sm rounded-full"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+        <div className="flex flex-col sm:flex-row gap-3">
+          {link && (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              Live Demo
+            </a>
+          )}
+          {github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-white font-semibold rounded-lg transition-colors duration-200"
+            >
+              GitHub
+            </a>
+          )}
         </div>
       </div>
-    </article>
-  )
-}
+    </motion.div>
+  );
+};
 
-const Projects = () => {
-  const [darkMode, setDarkMode] = useState(false);
-  
-  useEffect(() => {
-    // Check if dark mode preference is stored in local storage
-    const storedDarkMode = localStorage.getItem('darkMode');
-    if (storedDarkMode) {
-      setDarkMode(storedDarkMode === 'true');
+export default function Projects() {
+  const projects = [
+    {
+      title: 'Google AI Hackathon Project',
+      description: 'LLM agent platform combining CCTV video, crime statistics, and Gemini reasoning to identify public safety threats.',
+      image: '/googleaihackathon.png',
+      technologies: ['Python', 'Google Cloud', 'Gemini'],
+      link: null,
+      github: 'https://github.com/tohpinren',
+      year: 2024
+    },
+    {
+      title: 'Fast Limit Order Book',
+      description: 'High-performance order-matching engine simulating stock exchange activity with constant-time complexity.',
+      image: '/orderbook.png',
+      technologies: ['C++'],
+      link: null,
+      github: 'https://github.com/tohpinren',
+      year: 2023
+    },
+    {
+      title: 'MIT Battlecode',
+      description: 'Developed AI strategies to compete against other teams\' bots in a real-time strategy game.',
+      image: '/battlecode.jpeg',
+      technologies: ['Java'],
+      link: null,
+      github: 'https://github.com/tohpinren',
+      year: 2023
     }
-  }, []);
+  ];
 
-  useEffect(() => {
-    // Update local storage when dark mode state changes
-    localStorage.setItem('darkMode', darkMode);
-  }, [darkMode]);
-
+  const sortedProjects = [...projects].sort((a, b) => b.year - a.year);
 
   return (
-    <div className={darkMode ? 'dark' : ''}>
-        <Head>
-            <title>Toh Pin Ren</title>
-            <meta name='description' content='developed by Pin Ren'/>
-            <link rel='icon' href='/favicon.ico' />
-        </Head>
-        <main className='bg-white text-black dark:bg-black dark:text-white'>
-            <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
-            <div className='flex flex-col items-center'>
-                <h1 className='text-bold text-xl sm:text-3xl mb-8'>Hi! Here are some of my projects</h1>
-            </div>
+    <PageLayout title="Projects - Pin Ren Toh">
+      <Head>
+        <title>Projects - Pin Ren Toh</title>
+        <meta name="description" content="My software engineering projects" />
+      </Head>
 
-            <div className='flex flex-col items-center justify-evenly gap-20 pb-32'>
-              <Project
-                title='Google AI Hackathon 2024'
-                date='May 2024'
-                summary='CrimeWatch.AI is a project aimed at leveraging artificial intelligence to detect and prevent crime. This project utilizes Gemini 1.5 Pro API to analyze various data sources and provide insights to law enforcement agencies and communities.'
-                tech='Python, Gemini, Azure, React, Typescript'
-                img={googleaihackathon}
-                github='https://github.com/Y-ZR/CrimeWatch.AI'
-                link='https://googleai.devpost.com/'
-              />
-              <Project
-                title='Fast Limit Order Book'
-                date='Sep 2023'
-                summary='Implemented an efficient limit order book for high-frequency trading that supports mostly O(1) operations'
-                tech='C++, Doctest'
-                img={orderbook}
-                github='https://github.com/tohpinren/order-book'
-                link='https://github.com/tohpinren/order-book'
-              />
-              <Project
-                title='MIT BattleCode 2023'
-                date='Jan 2023'
-                summary='Competed in a RTS AI multiplayer programming competition, developing a player controller capable of strategising
-                and playing against other teams'
-                tech='Java'
-                img={battlecode}
-                github='https://github.com/tohpinren/Mixue-Rats'
-                link='https://battlecode.org/'
-              />
-            </div>
-        </main>
-        <Footer />
-    </div>
-  )
+      <div className="container-mobile py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8 sm:mb-12"
+          >
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+              My Projects
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-center">
+              Here are some of the projects I've worked on!
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {sortedProjects.map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </PageLayout>
+  );
 }
-
-export default Projects

@@ -1,73 +1,64 @@
-import React from 'react'
-import NavBar from 'components/NavBar'
-import Footer from 'components/Footer'
-import { useState, useEffect } from 'react'
-import Head from 'next/head'
-import { AiFillGithub, AiFillLinkedin, AiFillMail } from 'react-icons/ai'
-import Experience from 'components/Experience'
-import Education from 'components/Education'
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Education from '../components/Education';
+import Experience from '../components/Experience';
+import PageLayout from '../components/PageLayout';
+import SocialLinks from '../components/SocialLinks';
 
 const About = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    // Check if dark mode preference is stored in local storage
-    const storedDarkMode = localStorage.getItem('darkMode');
-    if (storedDarkMode) {
-      setDarkMode(storedDarkMode === 'true');
-    }
-  }, []);
-
-  useEffect(() => {
-    // Update local storage when dark mode state changes
-    localStorage.setItem('darkMode', darkMode);
-  }, [darkMode]);
-  
-
   return (
-    <div className={darkMode ? 'dark' : ''}>
-        <Head>
-            <title>Toh Pin Ren</title>
-            <meta name='description' content='developed by Pin Ren'/>
-            <link rel='icon' href='/favicon.ico' />
-        </Head>
-        <main className='bg-white text-black dark:bg-black dark:text-white'>
-            <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
-            <div className='flex flex-col justify-center items-center'>
-                <h1 className='text-bold text-2xl sm:text-3xl'>Nice to meet you!</h1>
-                <h3 className='text-base sm:text-xl w-[70%] sm:w-[50%]'>
-                  I&apos;m Pin Ren. I&apos;m a 3rd Year Computer Science Undergraduate at the National University of Singapore (NUS) specialising in Networking & Distributed Systems and Artificial Intelligence.
-                  I&apos;m deeply passionate about building highly efficient systems that can scale gracefully to tackle real-world problems.
-                </h3>
-                <br />
-                <h3 className='text-base sm:text-xl w-[70%] sm:w-[50%]'>
-                  Currently, I am a Software Engineering Intern at Kipo AI, under the NUS Overseas College Silicon Valley program.
-                </h3>
-                <br />
-                <h3 className='text-base sm:text-xl w-[70%] sm:w-[50%]'>
-                  I am currently looking for a Software Engineering Internship for 2025 Summer.
-                </h3>
-                <br />
-                <div className='text-3xl sm:text-5xl flex justify-center gap-16 py-3 text-gray-600 cursor-pointer'>
-                    <a href="https://www.linkedin.com/in/tohpinren/" target="_blank" rel="noopener noreferrer">
-                        <AiFillLinkedin className='hover:text-blue-600' />
-                    </a>
-                    <a href="https://github.com/tohpinren" target="_blank" rel="noopener noreferrer">
-                        <AiFillGithub className='hover:text-gray-400' />
-                    </a>
-                    <a href="mailto:tohpinren@gmail.com" target="_blank" rel="noopener noreferrer">
-                        <AiFillMail className='hover:text-red-500' />
-                    </a>
-                </div>
-            </div>
+    <PageLayout title="About - Pin Ren Toh">
+      <div className="container-mobile py-6 sm:py-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col md:flex-row items-center md:items-start mb-10 gap-6 md:gap-12"
+        >
+         <div className="flex-shrink-0 w-full md:w-auto flex justify-center md:justify-start">
+           <Image
+             src="/me1.jpeg"
+             alt="Pin Ren Toh at sunset in the mountains"
+             width={320}
+             height={400}
+             className="rounded-2xl shadow-lg object-cover max-h-80 sm:max-h-96 ring-2 ring-blue-500/20 dark:ring-blue-400/30 hover:ring-blue-500/40 dark:hover:ring-blue-400/50 transition-all duration-300"
+             priority
+           />
+         </div>
+         <div className="flex-1 w-full md:w-auto">
+           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 text-center md:text-left mobile-margin">
+             Nice to meet you!
+           </h1>
+           <div className="space-y-4 text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed text-center md:text-left mobile-margin">
+             <p>
+               I'm Pin Ren, a Year 4 Computer Science student at the National University of Singapore (NUS), specializing in Artificial Intelligence.
+             </p>
+             <p>
+               I'm passionate about building practical AI systems and distributed infrastructure. I'm currently working on my Final Year Project exploring LLMs and databases, developing techniques to automatically generate SQL benchmarks.
+             </p>
+             <p>
+               I'm actively seeking full-time Software Engineering roles starting Summer 2026.
+             </p>
+             <p>
+               When I'm not coding, I enjoy reading, cooking, and exploring new restaurants! I stay active through running and hiking, and love films and travel.
+             </p>
+           </div>
+           <motion.div
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.6, delay: 0.3 }}
+             className="mt-6 mobile-margin"
+           >
+             <SocialLinks className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl flex justify-center md:justify-start gap-6 sm:gap-8 md:gap-12 py-2 text-gray-600 dark:text-gray-400" />
+           </motion.div>
+         </div>
+        </motion.div>
 
-            <Experience />
-            <Education />
+        <Experience />
+        <Education />
+      </div>
+    </PageLayout>
+  );
+};
 
-        </main>
-        <Footer />
-    </div>
-  )
-}
-
-export default About
+export default About;

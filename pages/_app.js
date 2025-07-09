@@ -1,15 +1,12 @@
-import '../globals.css'
+import { Inter } from 'next/font/google';
+import '../globals.css';
 
-import '../globals.css'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
-
-export const metadata = {
-  title: 'Toh Pin Ren',
-  description: 'Pin Ren\'s portfolio',
-}
+const inter = Inter({ subsets: ['latin'] });
 
 export default function MyApp({ Component, pageProps }) {
-    return <Component {...pageProps} />
-  }
+  return (
+    <div className={inter.className}>
+      <Component {...pageProps} />
+    </div>
+  );
+}
