@@ -1,20 +1,65 @@
+/**
+ * Experience Component
+ *
+ * Professional experience timeline component that showcases work history
+ * in a visually appealing chronological format. Features animated cards
+ * with detailed information about each position.
+ *
+ * Key Features:
+ * - Timeline-style layout with animated entrance effects
+ * - Responsive design adapting to all screen sizes
+ * - Detailed work descriptions with company links
+ * - Chronological ordering (most recent first)
+ * - Consistent card styling across all experiences
+ *
+ * Design Pattern:
+ * - Reusable Details component for individual experience items
+ * - Data-driven approach with centralized experiences array
+ * - Animation on scroll for better user engagement
+ * - Semantic HTML structure for accessibility
+ *
+ * @file components/Experience.js
+ * @author Pin Ren Toh
+ */
+
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 
+/**
+ * Details Component
+ *
+ * Individual experience card component displaying a single work position.
+ * Features smooth animations when scrolled into view and responsive layout
+ * that adapts to different screen sizes.
+ *
+ * @param {Object} props - Component props
+ * @param {string} props.position - Job title/position name
+ * @param {string} props.company - Company/organization name
+ * @param {string} props.companyLink - URL to company website
+ * @param {string} props.time - Employment duration (e.g., "Jan 2024 - Dec 2024")
+ * @param {string} props.address - Work location (city, country)
+ * @param {string} props.work - Detailed description of work performed and achievements
+ * @returns {JSX.Element} Animated experience card with all position details
+ */
 const Details = ({ position, company, companyLink, time, address, work }) => {
+  // Ref for tracking element visibility for animations
   const ref = useRef(null);
 
   return (
     <li ref={ref} className="my-6 sm:my-8 first:mt-0 last:mb-0 w-full max-w-4xl mx-auto flex flex-col items-start justify-between">
       <motion.div
+        // Animate up from bottom when element comes into view
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, type: "spring" }}
-        viewport={{ once: true }}
+        transition={{ duration: 0.5, type: "spring" }} // Spring animation for natural feel
+        viewport={{ once: true }} // Animate only once for performance
         className="w-full bg-white dark:bg-gray-900 rounded-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-800 shadow-sm"
       >
+
+        {/* Position title and company link */}
         <h3 className="capitalize font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 dark:text-white mb-2">
           {position}
+          {/* Company link with external navigation */}
           <a
             href={companyLink}
             target="_blank"
@@ -24,9 +69,13 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
             {' '}@ {company}
           </a>
         </h3>
+
+        {/* Duration and location information */}
         <span className="capitalize font-medium text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 mb-4 block">
           {time} | {address}
         </span>
+
+        {/* Work description with visual accent border */}
         <div className="space-y-2 border-l-4 border-blue-300 dark:border-blue-400 pl-3 sm:pl-4">
           <div className="text-sm sm:text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
             {work}
@@ -37,7 +86,33 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
   );
 };
 
+/**
+ * Experience Component
+ *
+ * Main experience section that renders a timeline of professional positions.
+ * Displays experiences in chronological order with consistent styling and
+ * smooth animations for enhanced user experience.
+ *
+ * Data Management:
+ * - Experiences stored in local array for easy maintenance
+ * - Each experience includes comprehensive details about the role
+ * - Ordered chronologically from most recent to oldest
+ *
+ * Layout Strategy:
+ * - Vertical timeline layout for clear chronological flow
+ * - Responsive spacing that adapts to screen size
+ * - Centered content with maximum width constraints
+ *
+ * @returns {JSX.Element} Complete experience section with timeline layout
+ */
 const Experience = () => {
+  /**
+   * Professional experience data
+   *
+   * Array of experience objects containing detailed information about
+   * each professional position. Ordered chronologically with most
+   * recent experiences first for better user engagement.
+   */
   const experiences = [
     {
       position: 'Software Engineer Intern',
@@ -99,6 +174,8 @@ const Experience = () => {
 
   return (
     <div className="mt-12 sm:mt-16 pb-16 sm:pb-20">
+
+      {/* Section heading with animation */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -109,9 +186,12 @@ const Experience = () => {
         Experience
       </motion.h2>
 
+      {/* Timeline container with responsive layout */}
       <div className="w-full max-w-4xl mx-auto relative">
+        {/* Experience timeline list */}
         <ul className="w-full flex flex-col items-start justify-between space-y-6 sm:space-y-8">
           {experiences.map((exp, index) => (
+            // Spread operator passes all experience properties as props to Details component
             <Details key={index} {...exp} />
           ))}
         </ul>
