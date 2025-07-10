@@ -151,7 +151,7 @@ export default function Projects() {
     },
     {
       title: 'MIT Battlecode',
-      description: 'Developed AI strategies to compete against other teams\' bots in a real-time strategy game.',
+      description: "Developed AI strategies to compete against other teams' bots in a real-time strategy game.",
       image: '/battlecode.jpeg',
       technologies: ['Java'],
       link: null,
@@ -187,7 +187,7 @@ export default function Projects() {
 
             {/* Page description */}
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-center">
-              Here are some of the projects I've worked on!
+              Here are some of the projects I&rsquo;ve worked on!
             </p>
           </motion.div>
 
