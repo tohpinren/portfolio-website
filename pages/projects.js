@@ -98,7 +98,7 @@ const ProjectCard = ({ title, description, image, technologies, link, github }) 
             </a>
           )}
 
-          {/* GitHub repository button (conditional rendering) */}
+          {/* Project link button (conditional rendering) */}
           {github && (
             <a
               href={github}
@@ -106,7 +106,7 @@ const ProjectCard = ({ title, description, image, technologies, link, github }) 
               rel="noopener noreferrer"
               className="px-6 py-2 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-white font-semibold rounded-lg transition-colors duration-200"
             >
-              GitHub
+              View Project
             </a>
           )}
         </div>
@@ -137,7 +137,7 @@ export default function Projects() {
       image: '/googleaihackathon.png',
       technologies: ['Python', 'Google Cloud', 'Gemini'],
       link: null,
-      github: 'https://github.com/tohpinren',
+      github: 'https://devpost.com/software/crimewatch-ai?ref_content=my-projects-tab&ref_feature=my_projects',
       year: 2024
     },
     {
@@ -146,7 +146,7 @@ export default function Projects() {
       image: '/orderbook.png',
       technologies: ['C++'],
       link: null,
-      github: 'https://github.com/tohpinren',
+      github: 'https://github.com/tohpinren/order-book',
       year: 2023
     },
     {
@@ -155,7 +155,7 @@ export default function Projects() {
       image: '/battlecode.jpeg',
       technologies: ['Java'],
       link: null,
-      github: 'https://github.com/tohpinren',
+      github: 'https://battlecode.org/',
       year: 2023
     }
   ];
