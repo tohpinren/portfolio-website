@@ -1,0 +1,245 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Lucida Console', 'Courier New', monospace;
+    line-height: 1.6;
+    color: #ffffff;
+    background-color: #000000;
+    font-size: 14px;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1 {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Header */
+header {
+    border-bottom: 1px solid #333;
+    padding: 20px 0;
+}
+
+header .container {
+    text-align: center;
+}
+
+.role {
+    color: #888;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Sections */
+section {
+    padding: 40px 0;
+    border-bottom: 1px solid #333;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+/* Links */
+a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #ccc;
+}
+
+/* Icons */
+.icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    object-fit: contain;
+}
+
+.marymount-logo {
+    width: 85px;
+    height: auto;
+}
+
+.icare-logo {
+    width: 70px;
+    height: auto;
+}
+
+.nec-logo {
+    width: 70px;
+    height: auto;
+}
+
+.kipo-logo {
+    width: 70px;
+    height: auto;
+}
+
+.nus-logo {
+    width: 70px;
+    height: auto;
+}
+
+.bird-logo {
+    width: 60px;
+    height: auto;
+}
+
+.coreflint-logo {
+    width: 90px;
+    height: auto;
+}
+
+.whatsapp-logo {
+    width: 60px;
+    height: auto;
+}
+
+.stanford-logo {
+    width: 60px;
+    height: auto;
+}
+
+.ucd-logo {
+    width: 40px;
+    height: auto;
+}
+
+
+.links a {
+    margin-right: 20px;
+}
+
+/* Jobs */
+.job {
+    margin-bottom: 30px;
+}
+
+.dates {
+    color: #888;
+    margin-bottom: 10px;
+}
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Projects */
+.project {
+    margin-bottom: 30px;
+}
+
+.impact {
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.project .links a {
+    margin-right: 15px;
+}
+
+/* Footer */
+footer {
+    padding: 40px 0 20px;
+    text-align: center;
+}
+
+.contact-links a {
+    margin: 0 15px;
+}
+
+.updated {
+    color: #666;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    body {
+        font-size: 12px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 14px;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .links a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .contact-links a {
+        display: block;
+        margin: 5px 0;
+    }
+}
